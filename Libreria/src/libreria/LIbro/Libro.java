@@ -7,13 +7,64 @@ package libreria.LIbro;
 /**
  *
  * @author dilsh
-/yo lo hice asi ya que el del libro,tambien tienen un enum/ */  
+/Clase Libro */  
 public class Libro {
-    public String Nombre;
-    public String Autor;
-    public String Codigo;
-    public String FechaPublicacion;
+    public String titulo;
+    public String autor;
+    public String codigo;
+    public String fechaPublicacion;
     public int cantiadad;
+
+    public Libro(String titulo, String autor, String codigo, String fechaPublicacion, int cantiadad) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.codigo = codigo;
+        this.fechaPublicacion = fechaPublicacion;
+        this.cantiadad = cantiadad;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getFechaPublicacion() {
+        return fechaPublicacion;
+    }
+
+    public void setFechaPublicacion(String fechaPublicacion) {
+        this.fechaPublicacion = fechaPublicacion;
+    }
+
+    public int getCantiadad() {
+        return cantiadad;
+    }
+
+    public void setCantiadad(int cantiadad) {
+        this.cantiadad = cantiadad;
+    }
+
+    
+    
     
     
     

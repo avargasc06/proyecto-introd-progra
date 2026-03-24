@@ -8,9 +8,14 @@ package libreria.LIbro;
  *
  * @author dilsh
  */
+
+
 public enum Categoria {
-    Literatura,Historia,Filosofía,Arte,Infantil,Accion
-
-
-
+    // Enum de categorias
+    LITERATURA,
+    HISTORIA,
+    FILOSOFIA,
+    ARTE,
+    INFANTIL,
+    ACCION,
 }
