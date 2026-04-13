@@ -1,8 +1,12 @@
 package main;
 
 import javax.swing.JOptionPane;
+import libreria.Venta;
 
 public class Main {
+
+    static Venta[] ventas = new Venta[100];
+    static int contadorVentas = 0;
 
     public static void main(String[] args) {
 
@@ -144,15 +148,47 @@ public class Main {
             switch (op) {
 
                 case 1:
-                    JOptionPane.showMessageDialog(null, "Registrar venta");
+                    registrarVenta();
                     break;
 
                 case 2:
-                    JOptionPane.showMessageDialog(null, "Consultar ventas");
+                    consultarVentas();
                     break;
             }
 
         } while (op != 3);
+    }
+
+    public static void registrarVenta() {
+
+        if (contadorVentas >= ventas.length) {
+            JOptionPane.showMessageDialog(null, "No se pueden registrar más ventas");
+            return;
+        }
+
+        String titulo = JOptionPane.showInputDialog("Ingrese el nombre del libro:");
+        int cantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad:"));
+
+        ventas[contadorVentas] = new Venta(titulo, cantidad);
+        contadorVentas++;
+
+        JOptionPane.showMessageDialog(null, "Venta registrada correctamente");
+    }
+
+    public static void consultarVentas() {
+
+        if (contadorVentas == 0) {
+            JOptionPane.showMessageDialog(null, "No hay ventas registradas");
+            return;
+        }
+
+        String mensaje = "LISTA DE VENTAS\n";
+
+        for (int i = 0; i < contadorVentas; i++) {
+            mensaje += ventas[i].mostrarInfo() + "\n";
+        }
+
+        JOptionPane.showMessageDialog(null, mensaje);
     }
 
     public static void menuReportes() {
@@ -174,10 +210,13 @@ public class Main {
                     break;
 
                 case 2:
-                    JOptionPane.showMessageDialog(null, "Reporte ventas");
+                    consultarVentas();
                     break;
             }
 
+        } while (op != 3);
+    }
+}
         } while (op != 3);
     }
 }
