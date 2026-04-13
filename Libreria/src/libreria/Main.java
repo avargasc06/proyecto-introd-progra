@@ -1,7 +1,6 @@
-package main;
+package libreria;
 
 import javax.swing.JOptionPane;
-import libreria.Venta;
 
 public class Main {
 
@@ -27,27 +26,21 @@ public class Main {
                 case 1:
                     menuLibros();
                     break;
-
                 case 2:
                     menuUbicacion();
                     break;
-
                 case 3:
                     menuInventario();
                     break;
-
                 case 4:
                     menuVenta();
                     break;
-
                 case 5:
                     menuReportes();
                     break;
-
             }
 
         } while (opcion != 6);
-
     }
 
     public static void menuLibros() {
@@ -64,15 +57,12 @@ public class Main {
             ));
 
             switch (op) {
-
                 case 1:
                     JOptionPane.showMessageDialog(null, "Registrar libro");
                     break;
-
                 case 2:
                     JOptionPane.showMessageDialog(null, "Buscar libro");
                     break;
-
                 case 3:
                     JOptionPane.showMessageDialog(null, "Actualizar información");
                     break;
@@ -94,11 +84,9 @@ public class Main {
             ));
 
             switch (op) {
-
                 case 1:
                     JOptionPane.showMessageDialog(null, "Asignar ubicación");
                     break;
-
                 case 2:
                     JOptionPane.showMessageDialog(null, "Consultar ubicación");
                     break;
@@ -120,11 +108,9 @@ public class Main {
             ));
 
             switch (op) {
-
                 case 1:
                     JOptionPane.showMessageDialog(null, "Ver inventario");
                     break;
-
                 case 2:
                     JOptionPane.showMessageDialog(null, "Reporte inventario");
                     break;
@@ -146,11 +132,9 @@ public class Main {
             ));
 
             switch (op) {
-
                 case 1:
                     registrarVenta();
                     break;
-
                 case 2:
                     consultarVentas();
                     break;
@@ -204,19 +188,14 @@ public class Main {
             ));
 
             switch (op) {
-
                 case 1:
                     JOptionPane.showMessageDialog(null, "Reporte inventario");
                     break;
-
                 case 2:
                     consultarVentas();
                     break;
             }
 
-        } while (op != 3);
-    }
-}
         } while (op != 3);
     }
 }
