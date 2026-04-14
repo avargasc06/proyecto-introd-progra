@@ -143,21 +143,35 @@ public class Main {
         } while (op != 3);
     }
 
-    public static void registrarVenta() {
+   public static void registrarVenta() {
 
-        if (contadorVentas >= ventas.length) {
-            JOptionPane.showMessageDialog(null, "No se pueden registrar más ventas");
-            return;
+    String titulo = JOptionPane.showInputDialog("Ingrese el nombre del libro:");
+
+    boolean encontrado = false;
+
+    for (int i = 0; i < libros.length; i++) {
+
+        if (libros[i] != null && libros[i].equalsIgnoreCase(titulo)) {
+
+            encontrado = true;
+
+            // eliminar libro del inventario
+            libros[i] = null;
+            stock[i] = 0;
+
+            int cantidad = 1; // porque elimina el libro completo
+
+            ventas[contadorVentas] = new Venta(titulo, cantidad);
+            contadorVentas++;
+
+            JOptionPane.showMessageDialog(null, "Libro eliminado del inventario");
         }
-
-        String titulo = JOptionPane.showInputDialog("Ingrese el nombre del libro:");
-        int cantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad:"));
-
-        ventas[contadorVentas] = new Venta(titulo, cantidad);
-        contadorVentas++;
-
-        JOptionPane.showMessageDialog(null, "Venta registrada correctamente");
     }
+
+    if (!encontrado) {
+        JOptionPane.showMessageDialog(null, "Libro no encontrado");
+    }
+}
 
     public static void consultarVentas() {
 
