@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package libreria;
-
+import static libreria.Main.mostrarlibros;
 import javax.swing.JOptionPane;
 import static libreria.Main.consultarVentas;
 import static libreria.Main.registrarLibro;
@@ -62,9 +62,9 @@ public class Libreria {
             op = Integer.parseInt(JOptionPane.showInputDialog(
                     "GESTION DE LIBROS\n"
                     + "1. Registrar libro\n"
-                    + "2. Buscar libro\n"
-                    + "3. Actualizar información\n"
-                    + "4. Volver"
+                    + "2. Actualizar información\n"
+                    + "3. Volver"
+                    
             ));
 
             switch (op) {
@@ -73,16 +73,14 @@ public class Libreria {
                     registrarLibro();
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null, "Buscar libro");
-                    buscarlibro();
-                    break;
-                case 3:
                     JOptionPane.showMessageDialog(null, "Actualizar información");
                     actualizarLibro();
                     break;
+                   
+                    
             }
 
-        } while (op != 4);
+        } while (op != 3);
     }
     
     
@@ -117,16 +115,19 @@ public class Libreria {
             op = Integer.parseInt(JOptionPane.showInputDialog(
                     "INVENTARIO\n"
                     + "1. Ver inventario\n"
-                    + "2. Reporte inventario\n"
+                    + "2. buscar libro\n"
                     + "3. Volver"
             ));
 
             switch (op) {
                 case 1:
                     JOptionPane.showMessageDialog(null, "Ver inventario");
+                     mostrarlibros();        
+                    
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null, "Reporte inventario");
+                    JOptionPane.showMessageDialog(null, "Buscar libro");
+                    buscarlibro();
                     break;
             }
 

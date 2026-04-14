@@ -83,14 +83,25 @@ public class Main {
         } else {
             JOptionPane.showMessageDialog(null, "No se encontró el libro");
         }
-        
-        
-        
-        
+    }
+    
+        public static void mostrarlibros() {
+        if (contador == 0) {
+            JOptionPane.showMessageDialog(null, "No hay libros registrados");
+            return;
+        }
+        String info = "lista de libros: \n\n";
+        for (int i = 0; i < contador; i++) {
+            info += libro[i].toString();
+            info += "\n";
+            info += "--- --- --- --- ---";
+            info += "\n";
+        }
+        JOptionPane.showMessageDialog(null, info);
 
     }
-
-    public static void asignarUbicacion() {
+        
+public static void asignarUbicacion() {
 
     }
 
